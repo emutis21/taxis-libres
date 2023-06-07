@@ -1,0 +1,135 @@
+@import "./Variables";
+
+.slider-box {
+  top: 6.5rem;
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  margin: 0 0 8rem 0;
+
+  .slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+
+    div {
+      flex: 0 0 100%;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .indicators {
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+    transform: translateX(-50%);
+    @include flex-center;
+    gap: 1rem;
+
+    span {
+      display: inline-block;
+      width: $h3-font-size;
+      height: $h3-font-size;
+      border-radius: 50%;
+      background-color: $first-color;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 1px solid $second-color;
+    }
+
+    .active {
+      transition: all 0.3s;
+      background-color: $first-color;
+      transform: scale(1.3);
+      border-width: 2px;
+    }
+  }
+
+  .time-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: hsl(39, 100%, 50%);
+    // backdrop-filter: invert(80%);
+  }
+}
+
+.slide {
+  position: relative;
+
+  .sponsor {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    transition: all 0.3s;
+    @include flex-center-column;
+    clip-path: ellipse(90% 100% at 0% 50%);
+    background-color: hsla(0, 0%, 0%, 0.7);
+    backdrop-filter: blur(5px);
+
+    &:hover {
+      clip-path: ellipse(93% 100% at 0% 50%);
+    }
+
+    figure {
+      max-width: 60%;
+      min-height: 65%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      figcaption {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        text-wrap: balance;
+
+        h2 {
+          font-size: clamp($h1-font-size, 3vw, 5rem);
+          font-weight: $font-semi-bold;
+        }
+
+        p {
+          color: $light-gray-color;
+          font-size: clamp($h3-font-size, 1.3vw, 2rem);
+        }
+      }
+
+      .button {
+        align-self: end;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .slide{
+    .sponsor {
+      width: 100%;
+      left: -50%;
+    }
+  }
+
+  .slide-image {
+    object-position: right;
+  }
+}
