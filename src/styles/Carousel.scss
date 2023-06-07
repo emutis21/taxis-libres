@@ -116,20 +116,55 @@
 
       .button {
         align-self: end;
+        font-size: $h1-font-size;
+        animation: waves 2s infinite ease-in-out alternate;
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .slide{
+  .slider-box {
+    height: 85vh;
+  }
+  .slide {
     .sponsor {
+      background-color: hsla(0, 0%, 50%, 0.7);
+
       width: 100%;
-      left: -50%;
+      left: 50%;
+      padding: 0 3rem 0 0;
+      figure {
+        left: 0;
+        max-width: 85%;
+        min-height: 45%;
+        figcaption {
+          h2 {
+            font-size: 2.5rem;
+            color: $second-color;
+          }
+          p {
+            color: $black-color;
+          }
+        }
+        .button {
+          font-size: $h2-font-size;
+        }
+      }
     }
   }
 
   .slide-image {
     object-position: right;
+  }
+}
+
+@keyframes waves {
+  0% {
+    box-shadow: 0 0 6px 6px hsla(67, 100%, 43%, 0.1);
+  }
+  100% {
+    transform: translateX(16px);
+    box-shadow: 0 0 35px 16px hsla(67, 100%, 43%, 0.3);
   }
 }
