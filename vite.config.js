@@ -11,5 +11,5 @@ export default defineConfig({
       "text/jsx": ["jsx"],
     },
   },
-  base: "",
+  base: "/taxis-libres/",
 });
