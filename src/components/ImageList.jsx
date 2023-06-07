@@ -16,8 +16,8 @@ const ImagesList = [
     name: "Fondo 1",
     content: {
       sponsor: "",
-      title: "Descarga Taxis libres app",
-      text: "Y pide tu taxi de forma segura, fácil y rápida",
+      title: "¡Descarga la aplicación Taxis Libres ahora mismo!",
+      text: "Con nuestra innovadora aplicación móvil, pedir un taxi nunca ha sido tan seguro, fácil y rápido.",
       button: {
         href: "https://www.taxislibres.com.co/descarga-taxis-libres-app",
         title: "Ver más",
@@ -56,8 +56,7 @@ const ImagesList = [
     name: "Fondo 4",
     content: {
       sponsor: "",
-      title:
-        "Nuestra nueva navegación en tiempo real con Google Maps",
+      title: "Nuestra nueva navegación en tiempo real con Google Maps",
       text: "Confía en nuestra solución de navegación avanzada, para ofrecerte una experiencia de viaje excepcional",
       button: {
         href: "https://www.taxislibres.com.co/blog/taxis-libres-implementa-odrd-con-google-maps-platform",

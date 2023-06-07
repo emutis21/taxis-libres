@@ -7,7 +7,7 @@ footer {
 
   .footer {
     display: flex;
-
+    max-width: 85%;
     & > * {
       border-right: 2px solid lighten($second-color, 10);
 
@@ -95,7 +95,7 @@ footer {
       gap: 3rem;
 
       .img {
-        width: 11rem;
+        width: 9rem;
 
         img {
           cursor: pointer;
@@ -132,53 +132,61 @@ footer {
       margin: 6rem 0 0 0;
     }
   }
+}
 
-  @media (max-width: 768px) {
-    footer {
-      .footer {
-        padding: 0;
+@media (max-width: 768px) {
+  .container {
+    .footer {
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 3rem;
+      min-width: 100%;
+      grid-template-columns: 1fr;
+
+      > * {
+        border-right: none !important;
+      }
+
+      &-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        div {
+          @include flex-center;
+          text-align: center;
+        }
+      }
+
+      &-images {
         flex-direction: column;
-        gap: 3rem;
+      }
 
-        > * {
-          border-right: none !important;
-        }
+      &-social {
+        margin: 3rem 0 0 0;
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between;
+        width: 100%;
 
-        &-images {
-          flex-direction: column;
-        }
-
-        &-social {
-          margin: 3rem 0 0 0;
-          display: flex;
-          flex-direction: row !important;
-
-          div {
-            tool-tip {
-              display: none;
-            }
+        div {
+          tool-tip {
+            display: none;
           }
         }
       }
-
-      .end-footer {
-        margin: 0 !important;
-        flex-direction: column;
-
-        &-imgs {
-          justify-content: space-between !important;
-        }
-
-        small {
-          margin: 6rem 0;
-        }
-      }
     }
-  }
 
-  @media (max-width: 500px) {
-    .footer-links {
+    .end-footer {
+      margin: 0 !important;
       flex-direction: column;
+
+      &-imgs {
+        justify-content: space-between !important;
+      }
+
+      small {
+        margin: 6rem 0;
+      }
     }
   }
 }

@@ -15,7 +15,9 @@ const Slide = ({ image }) => {
       if (slideRef.current) {
         const scrollPosition = window.pageYOffset;
         const speed = 0.5; // Ajusta la velocidad de parallax según tus necesidades
-        slideRef.current.style.transform = `translateY(${scrollPosition * speed}px)`;
+        slideRef.current.style.transform = `translateY(${
+          scrollPosition * speed
+        }px)`;
       }
     };
 
@@ -27,12 +29,7 @@ const Slide = ({ image }) => {
 
   return (
     <div className="slide">
-      <img
-        ref={slideRef}
-        src={src}
-        alt={name}
-        className="slide-image"
-      />
+      <img ref={slideRef} src={src} alt={name} className="slide-image" />
       <div className="sponsor">
         <figure>
           <figcaption>
@@ -42,7 +39,7 @@ const Slide = ({ image }) => {
           {sponsor && <img src={sponsor.src} alt={sponsor.name} />}
 
           <a href={button.href} className="button">
-            {button.title} <MdChevronRight />{" "}
+            {button.title} <MdChevronRight />
           </a>
         </figure>
       </div>

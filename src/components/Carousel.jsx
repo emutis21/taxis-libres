@@ -1,13 +1,15 @@
 import { useState, useEffect, useRef } from "react";
-import "../styles/Carousel.scss";
+
 import Slide from "./Slide";
 import TimeBar from "./TimeBar";
+
+import "../styles/Carousel.scss";
 
 const Carousel = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const autoplayTimer = useRef(null);
 
-  const duration = 14000;
+  const duration = 145000;
 
   const handleButtonClick = (index) => {
     setActiveIndex(index);

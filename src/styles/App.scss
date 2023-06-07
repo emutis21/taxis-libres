@@ -89,7 +89,7 @@ tool-tip {
 }
 
 .scrollup__container {
-  right: 2rem;
+  right: 3%;
   bottom: 10%;
   z-index: $z-tooltip;
   position: fixed;
@@ -183,5 +183,14 @@ tool-tip {
 
   &:active {
     transform: translateY(1px) translateX(1px);
+  }
+}
+
+@media (max-width: 768px) {
+  tool-tip {
+    display: none;
+  }
+  .scrollup__container {
+    bottom: 5%;
   }
 }
