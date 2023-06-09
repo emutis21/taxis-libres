@@ -1,7 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { motion } from "framer-motion";
 
-const DropdownMenu = ({ title, tooltipR, tooltipL, arrow, children, t }) => {
+const DropdownMenu = ({
+  title,
+  tooltipR,
+  tooltipL,
+  arrow,
+  children,
+  t,
+  isOpenSidebar,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -41,6 +50,7 @@ const DropdownMenu = ({ title, tooltipR, tooltipL, arrow, children, t }) => {
         {title}
         {tooltipR && (
           <tool-tip
+            id={(isOpenSidebar && "false") || (!isOpen && "true")}
             role="tooltip"
             style={{
               left: "-185%",
@@ -50,7 +60,15 @@ const DropdownMenu = ({ title, tooltipR, tooltipL, arrow, children, t }) => {
             {tooltipR}
           </tool-tip>
         )}
-        {tooltipL && <tool-tip role="tooltip">{tooltipL}</tool-tip>}
+
+        {tooltipL && (
+          <tool-tip
+            id={(isOpenSidebar && "false") || (!isOpen && "true")}
+            role="tooltip"
+          >
+            {tooltipL}
+          </tool-tip>
+        )}
         {arrow && (
           <MdOutlineKeyboardArrowDown
             className={`${isOpen ? "open-rotate" : "close-rotate"}`}
@@ -58,14 +76,17 @@ const DropdownMenu = ({ title, tooltipR, tooltipL, arrow, children, t }) => {
         )}
       </div>
       {isOpen && (
-        <div
+        <motion.div
           className={`dropdown-menu ${
             isOpen ? "dropdown-menu-open" : "dropdown-menu-close"
           } ${t ? "true" : ""}`}
           onMouseDown={stopPropagation}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
           {children}
-        </div>
+        </motion.div>
       )}
       {isMoreOpen && (
         <div

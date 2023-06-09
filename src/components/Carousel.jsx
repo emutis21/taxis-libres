@@ -9,7 +9,7 @@ const Carousel = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const autoplayTimer = useRef(null);
 
-  const duration = 145000;
+  const duration = 14000;
 
   const handleButtonClick = (index) => {
     setActiveIndex(index);

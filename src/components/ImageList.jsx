@@ -30,7 +30,7 @@ const ImagesList = [
     content: {
       sponsor: { src: vanti, name: "sponsor-vanti" },
       title:
-        "Explora nuevos horizontes, respira tranquilamente en nuestros taxis",
+        "Respira tranquilamente en nuestros taxis",
       text: "Si eres conductor, ahorra con Gas Natural Vehicular en tu taxi y obtén hasta $1.300.000 en beneficios",
       button: {
         href: "https://www.taxislibres.com.co/vanti-consumo",
@@ -82,7 +82,7 @@ const ImagesList = [
     name: "Fondo 6",
     content: {
       sponsor: { src: ursafe, name: "sponsor-ursafe" },
-      title: "Viaja con confianza, cuidamos cada detalle en tu experiencia",
+      title: "Cuidamos cada detalle en tu experiencia",
       text: "Mantén el control de tu seguridad con nuestro sistema de protección activado por voz",
       button: {
         href: "https://www.taxislibres.com.co/blog/conductores-taxi/ursafe",

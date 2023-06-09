@@ -3,11 +3,16 @@
 footer {
   padding: 8rem 0 12rem 0;
   display: grid;
-  gap: 10%;
+  gap: 5%;
 
   .footer {
-    display: flex;
-    max-width: 85%;
+    display: grid;
+    grid-template-columns: 47% 47% 6%;
+
+    // max-width: 98%;
+    // width: 98%;
+    padding: 0;
+    margin: 0;
     & > * {
       border-right: 2px solid lighten($second-color, 10);
 
@@ -17,17 +22,16 @@ footer {
     }
 
     &-links {
-      flex: 1.5;
+      padding: 0 1rem 0 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 3rem;
 
       div {
-        flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
 
         h2 {
           height: 4rem;
@@ -46,12 +50,11 @@ footer {
     }
 
     &-images {
-      flex: 1;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
+      gap: 2rem;
 
       .img {
         width: 40%;
@@ -63,8 +66,9 @@ footer {
     }
 
     &-social {
-      flex: 0.1;
       display: flex;
+      padding: 0 0 0 1rem;
+
       flex-direction: column;
       justify-content: space-between;
       align-items: end;
@@ -134,7 +138,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 844px) {
   .container {
     .footer {
       margin: 0;
@@ -151,6 +155,7 @@ footer {
       &-links {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        padding: 0;
         div {
           @include flex-center;
           text-align: center;
@@ -162,9 +167,10 @@ footer {
       }
 
       &-social {
-        margin: 3rem 0 0 0;
+        margin: 2rem 0 0 0;
+        padding: 0;
         display: flex;
-        flex-direction: row !important;
+        flex-direction: row;
         justify-content: space-between;
         width: 100%;
 

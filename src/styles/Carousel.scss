@@ -28,7 +28,7 @@
   .indicators {
     position: absolute;
     left: 50%;
-    bottom: 1.5rem;
+    bottom: 1rem;
     transform: translateX(-50%);
     @include flex-center;
     gap: 1rem;
@@ -38,7 +38,7 @@
       width: $h3-font-size;
       height: $h3-font-size;
       border-radius: 50%;
-      background-color: $first-color;
+      background-color: darken($first-color, 7);
       cursor: pointer;
       transition: all 0.3s;
       border: 1px solid $second-color;
@@ -76,7 +76,7 @@
     transition: all 0.3s;
     @include flex-center-column;
     clip-path: ellipse(90% 100% at 0% 50%);
-    background-color: hsla(0, 0%, 0%, 0.7);
+    background-color: hsla(0, 0%, 50%, 0.7);
     backdrop-filter: blur(5px);
 
     &:hover {
@@ -106,26 +106,85 @@
         h2 {
           font-size: clamp($h1-font-size, 3vw, 5rem);
           font-weight: $font-semi-bold;
+          color: $second-color;
         }
 
         p {
           color: $light-gray-color;
           font-size: clamp($h3-font-size, 1.3vw, 2rem);
+          color: $black-color;
         }
       }
 
       .button {
-        align-self: end;
-        font-size: $h1-font-size;
-        animation: waves 2s infinite ease-in-out alternate;
+        align-self: start;
+        font-size: $h2-font-size;
+        position: relative;
+        background-color: $first-color;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          z-index: -1;
+
+          animation: buttonAnimation 5s linear;
+        }
+        &::before {
+          border-radius: 0.4rem;
+          box-shadow: 0px 0px 6px $first-color;
+          opacity: 1;
+          transform: scale(1);
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        &::before,
+        &::after {
+          animation: buttonAnimation;
+          animation-duration: 2.5s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in-out;
+        }
+      }
+
+      @keyframes buttonAnimation {
+        0% {
+          box-shadow: 0px 0px 16px 8px darken($first-color, 5);
+          opacity: 01;
+          // transform: scale(1.5);
+        }
+        50% {
+          box-shadow: 0px 0px 2px 4px darken($first-color, 15);
+          opacity: 0.1;
+          // transform: scale(1);
+        }
+        100% {
+          box-shadow: 0px 0px 16px 8px darken($first-color, 5);
+          opacity: 1;
+          // transform: scale(1.5);
+        }
       }
     }
   }
 }
 
+.slide-image {
+  object-position: right;
+}
+
 @media (max-width: 768px) {
   .slider-box {
-    height: 85vh;
+    height: 78vh;
+    top: 5.3rem;
+    .indicators {
+      bottom: 0.5rem;
+      display: flex;
+      gap: 0;
+      justify-content: space-evenly;
+      width: 80%;
+    }
   }
   .slide {
     .sponsor {
@@ -141,30 +200,15 @@
         figcaption {
           h2 {
             font-size: 2.5rem;
-            color: $second-color;
           }
           p {
-            color: $black-color;
+            font-size: $h2-font-size;
           }
         }
         .button {
-          font-size: $h2-font-size;
+          font-size: $h3-font-size;
         }
       }
     }
-  }
-
-  .slide-image {
-    object-position: right;
-  }
-}
-
-@keyframes waves {
-  0% {
-    box-shadow: 0 0 6px 6px hsla(67, 100%, 43%, 0.1);
-  }
-  100% {
-    transform: translateX(16px);
-    box-shadow: 0 0 35px 16px hsla(67, 100%, 43%, 0.3);
   }
 }
