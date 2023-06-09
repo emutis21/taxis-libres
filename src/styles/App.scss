@@ -20,6 +20,11 @@ body {
 
 ::-webkit-scrollbar {
   width: 0.8rem;
+  background-color: $second-color;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: $body-color;
+  }
 
   &-track {
     border-radius: 0.2rem;
@@ -88,6 +93,10 @@ tool-tip {
   }
 }
 
+#false {
+  display: none;
+}
+
 .scrollup__container {
   right: 3%;
   bottom: 10%;
@@ -115,14 +124,21 @@ tool-tip {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  padding: 0.5rem;
-  background-color: darken($first-color, 3);
+  padding: 0.6rem;
+  background-color: darken($first-color, 2);
   color: $second-color;
   font-size: $h1-font-size;
 
   &:hover {
     background-color: $second-color;
     color: $first-color;
+  }
+
+  &:active {
+    transform: translateY(3px);
+    tool-tip {
+      display: none;
+    }
   }
 
   tool-tip {
@@ -158,7 +174,8 @@ tool-tip {
 }
 
 .display-none {
-  display: none;
+  display: none !important;
+  opacity: 0;
 }
 
 .button {
@@ -185,12 +202,21 @@ tool-tip {
     transform: translateY(1px) translateX(1px);
   }
 }
+.sidebar {
+  display: none;
+}
 
-@media (max-width: 768px) {
+@media (max-width: 844px) {
   tool-tip {
     display: none;
   }
   .scrollup__container {
-    bottom: 5%;
+    bottom: 2%;
+  }
+  .sidebar {
+    display: block;
+  }
+  #false {
+    display: block;
   }
 }

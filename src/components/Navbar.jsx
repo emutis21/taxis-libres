@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
-import "../../styles/Navbar.scss";
+import "../styles/Navbar.scss";
 import NavLinks from "./NavLinks";
-import Mobile from "./Mobile";
 
-const Navbar = () => {
+const Navbar = ({ isOpenSidebar, toggleSidebar }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -27,10 +26,7 @@ const Navbar = () => {
   return (
     <header>
       <div className="desktop">
-        <NavLinks scrolled={scrolled} />
-      </div>
-      <div className="mobile">
-        <Mobile scrolled={scrolled} />
+        <NavLinks scrolled={scrolled} isOpenSidebar={isOpenSidebar} toggleSidebar={toggleSidebar}/>
       </div>
     </header>
   );

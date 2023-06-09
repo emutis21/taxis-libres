@@ -63,10 +63,10 @@ header {
         margin: 0;
         padding: 0;
 
-        ~ .open-rotate,
-        ~ .close-rotate {
-          display: none;
-        }
+        // ~ .open-rotate,
+        // ~ .close-rotate {
+        //   display: none;
+        // }
       }
 
       .dropdown {
@@ -201,110 +201,47 @@ header {
   }
 }
 
-.mobile {
+.btn-sidebar {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 844px) {
   .desktop {
-    display: none;
-  }
-
-  .mobile {
-    display: flex;
-    margin: 0 auto;
-    transition: width 0.5s ease;
-    top: $header-height;
-    width: 100%;
-    padding: 0 0 0 5%;
-    &-sidebar {
-      width: 95%;
-      // background-color: red;
-      z-index: 999;
-      &.open {
-        // background-color: blue;
-        transform: translateX(0);
-        position: fixed;
-        left: 0;
-        // width: 250px;
-        background-color: $navbar-color;
-        color: white;
-        padding: 1rem;
-        transition: transform 0.3s ease-in-out;
-        // z-index: -2;
-        height: 100vh;
-        overflow-y: auto;
-        min-width: 100%;
-        backdrop-filter: blur(70px);
-        // background-color: black;
-      }
-    }
-    
-    .mobile-header {
-      width: 100%;
-      justify-content: right;
-      display: flex;
-      .toggle-button {
-        font-size: 2rem;
-        background-color: transparent;
-        @include flex-center;
-        border: none;
-        color: white;
-        position: absolute;
-        top: 35%;
-        right: 90%;
-      }
-    }
-
     nav {
+      height: 6rem;
+      @include space-between;
+      transition: all 0.3s;
+      &.scrolled {
+        height: 4.5rem;
+      }
+      .btn-sidebar,
+      .btn-sidebar-close {
+        @include flex-center;
+        font-size: $h2-font-size;
+        border-radius: 50%;
+        padding: 0.4rem;
+        border: none;
+        background-color: $first-color;
+        cursor: pointer;
+        color: $second-color;
+      }
+      .btn-sidebar-close {
+        background-color: $navbar-color;
+        color: $navbar-color;
+      }
       .navlinks {
         display: none;
       }
-    }
-    .sidebar {
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        height: 50%;
+      }
     }
   }
+  .btn-sidebar {
+    display: none;
+  }
 }
-
-// .mobile {
-//   display: flex;
-//   flex-direction: column;
-//   width: 100%;
-//   margin: 0 auto;
-//   transition: width 0.5s ease;
-//   top: $header-height;
-
-//   .mobile-header {
-//     width: 100%;
-//     display: flex;
-//     justify-content: flex-start;
-//     align-items: center;
-//     padding: 0.5rem 1rem;
-//     background-color: $navbar-color;
-//     color: white;
-
-//     .toggle-button {
-//       font-size: 2rem;
-//       background-color: transparent;
-//       border: none;
-//       color: white;
-//       cursor: pointer;
-//     }
-//   }
-
-//   .sidebar {
-//     transform: translateX(0);
-//     position: fixed;
-//     top: $header-height;
-//     left: 0;
-//     width: 250px;
-//     background-color: $navbar-color;
-//     color: white;
-//     padding: 1rem;
-//     transition: transform 0.3s ease-in-out;
-//     z-index: 999;
-//     height: 100vh;
-//     overflow-y: auto;
-//     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-//   }
-// }
