@@ -1,67 +1,55 @@
-```sh
-# Taxis Libres
+# Taxis libres
 
-Este proyecto tiene como objetivo mejorar la página web existente de Taxis Libres, optimizando su rendimiento y corrigiendo errores en la interfaz de usuario.
+## Descripción
+Este proyecto es una landing page mejorada creada a partir de la página web [https://www.taxislibres.com.co/](https://www.taxislibres.com.co/). El objetivo del proyecto fue mejorar el rendimiento, la interfaz de usuario (UI) y la experiencia de usuario (UX) de la página original. Para lograrlo, se utilizaron las siguientes tecnologías: Vite, React y SCSS.
+
+Se puede ver la página desplegada en GitHub Pages en: [https://emutis21.github.io/taxis-libres/](https://emutis21.github.io/taxis-libres/).
+
+## Tabla de Contenidos
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Dependencias](#dependencias)
+- [Contribución](#contribución)
+- [Licencia](#licencia)
 
 ## Instalación
-
-1. Se debe de tener Node.js instalado en tu sistema.
-2. Clona el repositorio de Taxis Libres desde GitHub:
-
-git clone https://github.com/emutis21/taxis-libres.git
-
-3. Abre una terminal en el directorio raíz del proyecto.
-4. Ejecuta el siguiente comando para instalar las dependencias del proyecto:
-
-npm install
+Pasos para instalar el proyecto:
+1. Clonar este repositorio con el comando `git clone https://github.com/emutis21/taxis-libres.git`.
+2. Entrar en la carpeta del proyecto utilizando el comando `cd taxis-libres`.
+3. Instalar las dependencias utilizando el comando `npm install`.
+4. Iniciar el servidor de desarrollo con el comando `npm run dev`.
 
 ## Uso
+Para utilizar este proyecto, se puede navegar por la página web y ver las diferentes secciones que contiene. También se puede interactuar con los botones y enlaces que direccionan a otras páginas o redes sociales.
 
-Después de completar la instalación, ejecuta el siguiente comando para iniciar el proyecto en modo de desarrollo:
-npm run dev
-Esto iniciará el servidor de desarrollo de Vite y podrás acceder al proyecto en tu navegador en la dirección `http://localhost:3000`.
+## Estructura del Proyecto
+Este proyecto tiene la siguiente estructura de directorios:
+- `src/`
+  - `assets/`
+  - `components/`
+  - `styles/`
+  - `App.js`
+  - `index.js`
+- `public/`
+  - `favicon.ico`
+- `.gitignore`
+- `index.html`
+- `LICENSE`
+- `package.json`
+- `README.md`
 
-## Estructura del proyecto
-
-- `src/`: Directorio principal del código fuente.
-  - `assets/`: Están las imágenes usadas del proyecto.
-  - `components/`: Contiene los componentes reutilizables del proyecto.
-  - `styles/`: Contiene los archivos de estilos en Sass.
-  - `App.js`: Archivo principal que renderiza la aplicación.
-  - `index.js`: Punto de entrada de la aplicación.
+## Dependencias
+Este proyecto utiliza las siguientes dependencias:
+- `framer-motion`: `npm install framer-motion`
+- `react`: `npm install react`
+- `react-dom`: `npm install react-dom`
+- `react-icons`: `npm install react-icons`
+- `sass`: `npm install sass`
+- `scss`: `npm install scss`
 
 ## Contribución
-
-Si se desea contribuir al proyecto es importnate:
-
-1. Hacer un fork del repositorio en GitHub.
-2. Clonar el fork del repositorio a su máquina local.
-3. Crea una nueva rama para la contribución:
-
-git checkout -b nombre-de-la-rama
-
-4. Realizar los cambios y mejoras en la rama local.
-5. Asegurase de seguir las pautas de estilo de código establecidas en el proyecto.
-6. Realizar commits descriptivos de los cambios:
-
-git commit -m "Descripción de los cambios"
-
-7. Push los cambios a su repositorio remoto:
-
-git push origin nombre-de-la-rama
-
-8. Abrir un pull request en el repositorio principal para que tus cambios sean revisados y fusionados.
-
-## Autoría y créditos
-
-Este proyecto fue creado y desarrollado por Esteban Smith Mutis, bassado en la página web actual de taxis libres.
+Si se desea contribuir a este proyecto, se puede hacer un fork del repositorio y crear una solicitud de extracción con los cambios. Asegurarse de seguir las buenas prácticas de código y documentación.
 
 ## Licencia
-
-Código abierto
-
-## Estado del proyecto
-
-El proyecto Taxis Libres se encuentra en desarrollo activo. La versión actual es la 0.0.0. Se puede acceder a la versión de demostración en [https://emutis21.github.io/taxis-libres/](https://emutis21.github.io/taxis-libres/). Tener en cuenta que el proyecto está en constante evolución y puede haber errores conocidos o características planificadas para futuras actualizaciones. Actualmente, se está trabajando en el desarrollo de un sidebar para la versión móvil, el cual se encuentra en progreso.
-
-```
+Este proyecto está bajo la licencia MIT. Consultar el archivo `LICENSE` para obtener más detalles.
